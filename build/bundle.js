@@ -463,8 +463,6 @@
 
 	var _Keys = __webpack_require__(13);
 
-	var _Keys2 = _interopRequireDefault(_Keys);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -482,21 +480,21 @@
 			this.context.fillStyle = 'white';
 
 			//Instances of white keys
-			this.a1 = new _WhiteKey2.default(this.height, 0, _Keys2.default);
-			this.b1 = new _WhiteKey2.default(this.height, 100, _Keys2.default);
-			this.c1 = new _WhiteKey2.default(this.height, 200, _Keys2.default);
-			this.c2 = new _WhiteKey2.default(this.height, 300, _Keys2.default);
-			this.d1 = new _WhiteKey2.default(this.height, 400, _Keys2.default);
-			this.e1 = new _WhiteKey2.default(this.height, 500, _Keys2.default);
-			this.f1 = new _WhiteKey2.default(this.height, 600, _Keys2.default);
-			this.g1 = new _WhiteKey2.default(this.height, 700, _Keys2.default);
+			this.a1 = new _WhiteKey2.default(this.height, 0, _Keys.a1Key);
+			this.b1 = new _WhiteKey2.default(this.height, 100, _Keys.b1Key);
+			this.c1 = new _WhiteKey2.default(this.height, 200, _Keys.c1Key);
+			this.c2 = new _WhiteKey2.default(this.height, 300, _Keys.c2Key);
+			this.d1 = new _WhiteKey2.default(this.height, 400, _Keys.d1Key);
+			this.e1 = new _WhiteKey2.default(this.height, 500, _Keys.e1Key);
+			this.f1 = new _WhiteKey2.default(this.height, 600, _Keys.f1Key);
+			this.g1 = new _WhiteKey2.default(this.height, 700, _Keys.g1Key);
 
 			//Instances of black keys
-			this.a1s = new _BlackKey2.default(this.height, 50, _Keys2.default);
-			this.c1s = new _BlackKey2.default(this.height, 150, _Keys2.default);
-			this.d1s = new _BlackKey2.default(this.height, 350, _Keys2.default);
-			this.f1s = new _BlackKey2.default(this.height, 450, _Keys2.default);
-			this.g1s = new _BlackKey2.default(this.height, 550, _Keys2.default);
+			this.a1s = new _BlackKey2.default(this.height, 50, _Keys.a1sKey);
+			this.c1s = new _BlackKey2.default(this.height, 150, _Keys.c1sKey);
+			this.d1s = new _BlackKey2.default(this.height, 350, _Keys.d1sKey);
+			this.f1s = new _BlackKey2.default(this.height, 450, _Keys.f1sKey);
+			this.g1s = new _BlackKey2.default(this.height, 550, _Keys.g1sKey);
 		}
 		//This will call the drawboard, ball and players every 30 ms
 
@@ -539,11 +537,10 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var upPressed = false;
-	var downPressed = false;
+	var pressed = false;
 
 	var WhiteKey = function () {
-	  function WhiteKey(boardHeight, x, keys) {
+	  function WhiteKey(boardHeight, x, key) {
 	    var _this = this;
 
 	    _classCallCheck(this, WhiteKey);
@@ -554,9 +551,9 @@
 	    this.x = x;
 	    this.y = 0;
 	    this.color = "white";
-	    this.keys = keys;
-	    this.upPressed;
-	    this.downPressed;
+	    this.keys = key;
+	    console.log(this.keys.note);
+	    this.pressed;
 	    document.addEventListener('keydown', function (event) {
 	      return _this.keyUp(event);
 	    });
@@ -572,11 +569,13 @@
 	    key: 'keyUp',
 	    value: function keyUp(event) {
 	      switch (event.keyCode) {
-	        case this.keys.up:
-	          this.upPressed = true;
-	          break;
-	        case this.keys.down:
-	          this.downPressed = true;
+	        case this.keys.key:
+	          console.log("Hello!");
+	          this.keys.note.currentTime = 0;
+	          this.keys.note.loop = false;
+	          this.keys.note.play();
+	          this.color = "grey";
+	          this.pressed = true;
 	          break;
 	        default:
 	          return;
@@ -589,11 +588,9 @@
 	    key: 'keyDown',
 	    value: function keyDown(event) {
 	      switch (event.keyCode) {
-	        case this.keys.up:
-	          this.upPressed = false;
-	          break;
-	        case this.keys.down:
-	          this.downPressed = false;
+	        case this.keys.key:
+	          this.pressed = false;
+	          this.color = "white";
 	          break;
 	        default:
 	          return;
@@ -629,14 +626,13 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var upPressed = false;
-	var downPressed = false;
+	var pressed = false;
 
-	var BlackKey = function () {
-	  function BlackKey(boardHeight, x, keys) {
+	var WhiteKey = function () {
+	  function WhiteKey(boardHeight, x, key) {
 	    var _this = this;
 
-	    _classCallCheck(this, BlackKey);
+	    _classCallCheck(this, WhiteKey);
 
 	    this.width = 95;
 	    this.height = 125;
@@ -644,9 +640,9 @@
 	    this.x = x;
 	    this.y = 0;
 	    this.color = "black";
-	    this.keys = keys;
-	    this.upPressed;
-	    this.downPressed;
+	    this.keys = key;
+	    console.log(this.keys.note);
+	    this.pressed;
 	    document.addEventListener('keydown', function (event) {
 	      return _this.keyUp(event);
 	    });
@@ -658,15 +654,17 @@
 	  //upPress/downPress values are true when keys are pressed down
 
 
-	  _createClass(BlackKey, [{
+	  _createClass(WhiteKey, [{
 	    key: 'keyUp',
 	    value: function keyUp(event) {
 	      switch (event.keyCode) {
-	        case this.keys.up:
-	          this.upPressed = true;
-	          break;
-	        case this.keys.down:
-	          this.downPressed = true;
+	        case this.keys.key:
+	          console.log("Hello!");
+	          this.keys.note.currentTime = 0;
+	          this.keys.note.loop = false;
+	          this.keys.note.play();
+	          this.color = "grey";
+	          this.pressed = true;
 	          break;
 	        default:
 	          return;
@@ -679,11 +677,9 @@
 	    key: 'keyDown',
 	    value: function keyDown(event) {
 	      switch (event.keyCode) {
-	        case this.keys.up:
-	          this.upPressed = false;
-	          break;
-	        case this.keys.down:
-	          this.downPressed = false;
+	        case this.keys.key:
+	          this.pressed = false;
+	          this.color = "black";
 	          break;
 	        default:
 	          return;
@@ -700,71 +696,84 @@
 	    }
 	  }]);
 
-	  return BlackKey;
+	  return WhiteKey;
 	}();
 
-	exports.default = BlackKey;
+	exports.default = WhiteKey;
 
 /***/ },
 /* 13 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var a1Key = exports.a1Key = {
 	  key: 65, //A key
-	  note: 90 };
+	  note: new Audio('sounds/a1.wav')
+	};
 
 	var a1sKey = exports.a1sKey = {
 	  key: 87, //W key
-	  note: 90 };
+	  note: new Audio('sounds/a1s.wav')
+	};
 
 	var b1Key = exports.b1Key = {
 	  key: 83, //S key
-	  note: 90 };
+	  note: new Audio('sounds/b1.wav')
+	};
 
 	var c1Key = exports.c1Key = {
 	  key: 68, //D key
-	  note: 90 };
+	  note: new Audio('sounds/c1.wav')
+	};
 
 	var c1sKey = exports.c1sKey = {
 	  key: 69, //E key
-	  note: 90 };
+	  note: new Audio('sounds/c1s.wav')
+	};
 
 	var c2Key = exports.c2Key = {
 	  key: 70, //F key
-	  note: 90 };
+	  note: new Audio('sounds/c2.wav')
+	};
 
 	var d1Key = exports.d1Key = {
 	  key: 71, //G key
-	  note: 90 };
+	  note: new Audio('sounds/d1.wav')
+	};
 
 	var d1sKey = exports.d1sKey = {
 	  key: 89, //Y key
-	  note: 90 };
+	  note: new Audio('sounds/d1s.wav')
+	};
 
 	var e1Key = exports.e1Key = {
 	  key: 72, //H key
-	  note: 90 };
+	  note: new Audio('sounds/e1.wav')
+	};
 
 	var f1Key = exports.f1Key = {
 	  key: 74, //J key
-	  note: 90 };
+	  note: new Audio('sounds/f1.wav')
+	};
 
 	var f1sKey = exports.f1sKey = {
 	  key: 85, //U key
-	  note: 90 };
+	  note: new Audio('sounds/f1s.wav')
+	};
 
 	var g1Key = exports.g1Key = {
 	  key: 75, //K key
-	  note: 90 };
+	  note: new Audio('sounds/g1.wav')
+	};
 
 	var g1sKey = exports.g1sKey = {
 	  key: 73, //I key
-	  note: 90 };
+	  note: new Audio('sounds/g1s.wav')
+	};
 
 /***/ }
 /******/ ]);

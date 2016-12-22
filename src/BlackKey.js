@@ -1,17 +1,16 @@
-let upPressed = false;
-let downPressed = false;
+let pressed = false;
 
-export default class BlackKey {
-  constructor(boardHeight, x, keys){
+export default class WhiteKey {
+  constructor(boardHeight, x, key){
     this.width = 95;
     this.height = 125;
     this.boardHeight = boardHeight;
     this.x = x;
     this.y = 0
     this.color = "black";
-    this.keys = keys;
-    this.upPressed;
-    this.downPressed;
+    this.keys = key;
+    console.log(this.keys.note);
+    this.pressed;
     document.addEventListener('keydown',event => this.keyUp(event))
     document.addEventListener('keyup',event => this.keyDown(event))
   }
@@ -19,11 +18,13 @@ export default class BlackKey {
   //upPress/downPress values are true when keys are pressed down
   keyUp(event){
     switch (event.keyCode) {
-      case this.keys.up:
-      this.upPressed = true;
-      break;
-      case this.keys.down:
-      this.downPressed = true;
+      case this.keys.key:
+      console.log("Hello!");
+      this.keys.note.currentTime = 0;
+      this.keys.note.loop = false;
+      this.keys.note.play();
+      this.color = "grey";
+      this.pressed = true;
       break;
       default: return;
     }
@@ -32,11 +33,9 @@ export default class BlackKey {
   //upPress/downPress values are false when keys are released
   keyDown(event){
     switch (event.keyCode) {
-      case this.keys.up:
-      this.upPressed = false;
-      break;
-      case this.keys.down:
-      this.downPressed = false;
+      case this.keys.key:
+      this.pressed = false;
+      this.color = "black";
       break;
       default: return;
     }
