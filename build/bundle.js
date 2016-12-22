@@ -98,7 +98,7 @@
 
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n   margin: 0;\n   padding: 0;\n   border: 0;\n   font-size: 100%;\n   font: inherit;\n   vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n   display: block;\n}\nbody {\n   line-height: 1;\n}\nol, ul {\n   list-style: none;\n}\nblockquote, q {\n   quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n   content: '';\n   content: none;\n}\ntable {\n   border-collapse: collapse;\n   border-spacing: 0;\n}\n\n/* Game Styles */\n\n@font-face {\n    font-family: 'PressStart2P Web';\n    src: url(" + __webpack_require__(4) + ");\n    src: url(" + __webpack_require__(4) + "?#iefix) format('embedded-opentype'),\n         url(" + __webpack_require__(5) + ") format('woff2'),\n         url(" + __webpack_require__(6) + ") format('woff'),\n         url(" + __webpack_require__(7) + ") format('truetype'),\n         url(" + __webpack_require__(8) + "#press_start_2pregular) format('svg');\n    font-weight: normal;\n    font-style: normal;\n}\nbody {\n   font-family: 'PressStart2P Web', monospace;\n   margin: 0 auto;\n   text-align: center;\n   display: flex;\n   justify-content: center;\n   align-items: center;\n   align-content: center;\n   height: 100vh;\n}\n\nh1 {\n   margin-top: 20px;\n}\n#piano {\n   background-color: grey;\n   display: block;\n   height: 250px;\n   margin: 20px auto;\n   width: 900px;\n}\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n   margin: 0;\n   padding: 0;\n   border: 0;\n   font-size: 100%;\n   font: inherit;\n   vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n   display: block;\n}\nbody {\n   line-height: 1;\n}\nol, ul {\n   list-style: none;\n}\nblockquote, q {\n   quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n   content: '';\n   content: none;\n}\ntable {\n   border-collapse: collapse;\n   border-spacing: 0;\n}\n\n/* Game Styles */\n\n@font-face {\n    font-family: 'PressStart2P Web';\n    src: url(" + __webpack_require__(4) + ");\n    src: url(" + __webpack_require__(4) + "?#iefix) format('embedded-opentype'),\n         url(" + __webpack_require__(5) + ") format('woff2'),\n         url(" + __webpack_require__(6) + ") format('woff'),\n         url(" + __webpack_require__(7) + ") format('truetype'),\n         url(" + __webpack_require__(8) + "#press_start_2pregular) format('svg');\n    font-weight: normal;\n    font-style: normal;\n}\nbody {\n   font-family: 'PressStart2P Web', monospace;\n   margin: 0 auto;\n   text-align: center;\n   display: flex;\n   justify-content: center;\n   align-items: center;\n   align-content: center;\n   height: 100vh;\n   background-color: grey;\n}\n\nsection {\n  background-color: white;\n}\nh1 {\n   margin-top: 20px;\n}\n#piano {\n   background-color: black;\n   display: block;\n   height: 250px;\n   margin: 0 auto;\n   width: 700px;\n}\n.players {\n   display: inline-flex;\n   justify-content: space-between;\n   text-align: center;\n   width: 512px;\n}\n", ""]);
 
 	// exports
 
@@ -453,7 +453,15 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _Keys = __webpack_require__(11);
+	var _WhiteKey = __webpack_require__(11);
+
+	var _WhiteKey2 = _interopRequireDefault(_WhiteKey);
+
+	var _Keys = __webpack_require__(12);
+
+	var _Keys2 = _interopRequireDefault(_Keys);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -467,21 +475,30 @@
 			this.width = canvas.width;
 			this.height = canvas.height;
 			this.context = canvas.getContext('2d');
-			this.context.fillStyle = 'grey';
+			this.context.fillStyle = 'white';
 
 			//Instances of ball, player 1, player 2 and their keys are created here
-			this.p1 = new Paddle(this.height, 10, 'white', _Keys.p1Keys);
-			this.p2 = new Paddle(this.height, this.width - 4 - 10, 'white', _Keys.p2Keys);
+			this.a1 = new _WhiteKey2.default(this.height, 0, _Keys2.default);
+			this.b1 = new _WhiteKey2.default(this.height, 100, _Keys2.default);
+			this.c1 = new _WhiteKey2.default(this.height, 200, _Keys2.default);
+			this.d1 = new _WhiteKey2.default(this.height, 300, _Keys2.default);
+			this.e1 = new _WhiteKey2.default(this.height, 400, _Keys2.default);
+			this.f1 = new _WhiteKey2.default(this.height, 500, _Keys2.default);
+			this.g1 = new _WhiteKey2.default(this.height, 600, _Keys2.default);
 		}
-
 		//This will call the drawboard, ball and players every 30 ms
 
 
 		_createClass(Piano, [{
 			key: 'render',
 			value: function render() {
-				this.drawBoard();
-				this.ball.render(this.context, this.p1, this.p2, this.p1Score, this.p2Score);
+				this.a1.render(this.context);
+				this.b1.render(this.context);
+				this.c1.render(this.context);
+				this.d1.render(this.context);
+				this.e1.render(this.context);
+				this.f1.render(this.context);
+				this.g1.render(this.context);
 			}
 		}]);
 
@@ -494,21 +511,152 @@
 /* 11 */
 /***/ function(module, exports) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var upPressed = false;
+	var downPressed = false;
+
+	var WhiteKey = function () {
+	  function WhiteKey(boardHeight, x, keys) {
+	    var _this = this;
+
+	    _classCallCheck(this, WhiteKey);
+
+	    this.width = 95;
+	    this.height = 250;
+	    this.boardHeight = boardHeight;
+	    this.x = x;
+	    this.y = 0;
+	    this.color = "white";
+	    this.keys = keys;
+	    this.upPressed;
+	    this.downPressed;
+	    document.addEventListener('keydown', function (event) {
+	      return _this.keyUp(event);
+	    });
+	    document.addEventListener('keyup', function (event) {
+	      return _this.keyDown(event);
+	    });
+	  }
+
+	  //upPress/downPress values are true when keys are pressed down
+
+
+	  _createClass(WhiteKey, [{
+	    key: 'keyUp',
+	    value: function keyUp(event) {
+	      switch (event.keyCode) {
+	        case this.keys.up:
+	          this.upPressed = true;
+	          break;
+	        case this.keys.down:
+	          this.downPressed = true;
+	          break;
+	        default:
+	          return;
+	      }
+	    }
+
+	    //upPress/downPress values are false when keys are released
+
+	  }, {
+	    key: 'keyDown',
+	    value: function keyDown(event) {
+	      switch (event.keyCode) {
+	        case this.keys.up:
+	          this.upPressed = false;
+	          break;
+	        case this.keys.down:
+	          this.downPressed = false;
+	          break;
+	        default:
+	          return;
+	      }
+	    }
+
+	    //This is to give the paddle it's shape using the above constructor values.
+
+	  }, {
+	    key: 'render',
+	    value: function render(context) {
+	      context.fillStyle = this.color;
+	      context.fillRect(this.x, this.y, this.width, this.height);
+	    }
+	  }]);
+
+	  return WhiteKey;
+	}();
+
+	exports.default = WhiteKey;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var p1Keys = exports.p1Keys = {
-	  up: 65, //A key
-	  down: 90 };
+	var a1Key = exports.a1Key = {
+	  key: 65, //A key
+	  note: 90 };
 
-	var p2Keys = exports.p2Keys = {
-	  up: 38, //Up key
-	  down: 40 };
+	var a1sKey = exports.a1sKey = {
+	  key: 87, //W key
+	  note: 90 };
 
-	var Start = exports.Start = {
-	  go: 84 };
+	var b1Key = exports.b1Key = {
+	  key: 83, //S key
+	  note: 90 };
+
+	var c1Key = exports.c1Key = {
+	  key: 68, //D key
+	  note: 90 };
+
+	var c1sKey = exports.c1sKey = {
+	  key: 69, //E key
+	  note: 90 };
+
+	var c2Key = exports.c2Key = {
+	  key: 70, //F key
+	  note: 90 };
+
+	var d1Key = exports.d1Key = {
+	  key: 71, //G key
+	  note: 90 };
+
+	var d1sKey = exports.d1sKey = {
+	  key: 89, //Y key
+	  note: 90 };
+
+	var e1Key = exports.e1Key = {
+	  key: 72, //H key
+	  note: 90 };
+
+	var f1Key = exports.f1Key = {
+	  key: 74, //J key
+	  note: 90 };
+
+	var f1sKey = exports.f1sKey = {
+	  key: 85, //U key
+	  note: 90 };
+
+	var g1Key = exports.g1Key = {
+	  key: 75, //K key
+	  note: 90 };
+
+	var g1sKey = exports.g1sKey = {
+	  key: 73, //I key
+	  note: 90 };
 
 /***/ }
 /******/ ]);

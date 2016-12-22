@@ -13,7 +13,7 @@ module.exports = {
   devServer: {
     inline: true,
     host: '0.0.0.0',
-    port: '3000',
+    port: '8888',
     watchOptions: {
       aggregateTimeout: 300,
       poll: true
