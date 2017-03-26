@@ -461,7 +461,7 @@
 
 	var _BlackKey2 = _interopRequireDefault(_BlackKey);
 
-	var _Keys = __webpack_require__(13);
+	var _Notes = __webpack_require__(13);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -480,23 +480,23 @@
 			this.context.fillStyle = 'white';
 
 			//Instances of white keys
-			this.a1 = new _WhiteKey2.default(this.height, 0, _Keys.a1Key);
-			this.b1 = new _WhiteKey2.default(this.height, 100, _Keys.b1Key);
-			this.c1 = new _WhiteKey2.default(this.height, 200, _Keys.c1Key);
-			this.c2 = new _WhiteKey2.default(this.height, 300, _Keys.c2Key);
-			this.d1 = new _WhiteKey2.default(this.height, 400, _Keys.d1Key);
-			this.e1 = new _WhiteKey2.default(this.height, 500, _Keys.e1Key);
-			this.f1 = new _WhiteKey2.default(this.height, 600, _Keys.f1Key);
-			this.g1 = new _WhiteKey2.default(this.height, 700, _Keys.g1Key);
+			this.a1 = new _WhiteKey2.default(this.height, 0, _Notes.notes.a1Key);
+			this.b1 = new _WhiteKey2.default(this.height, 100, _Notes.notes.b1Key);
+			this.c1 = new _WhiteKey2.default(this.height, 200, _Notes.notes.c1Key);
+			this.c2 = new _WhiteKey2.default(this.height, 300, _Notes.notes.c2Key);
+			this.d1 = new _WhiteKey2.default(this.height, 400, _Notes.notes.d1Key);
+			this.e1 = new _WhiteKey2.default(this.height, 500, _Notes.notes.e1Key);
+			this.f1 = new _WhiteKey2.default(this.height, 600, _Notes.notes.f1Key);
+			this.g1 = new _WhiteKey2.default(this.height, 700, _Notes.notes.g1Key);
 
 			//Instances of black keys
-			this.a1s = new _BlackKey2.default(this.height, 50, _Keys.a1sKey);
-			this.c1s = new _BlackKey2.default(this.height, 150, _Keys.c1sKey);
-			this.d1s = new _BlackKey2.default(this.height, 350, _Keys.d1sKey);
-			this.f1s = new _BlackKey2.default(this.height, 450, _Keys.f1sKey);
-			this.g1s = new _BlackKey2.default(this.height, 550, _Keys.g1sKey);
+			this.a1s = new _BlackKey2.default(this.height, 50, _Notes.notes.a1sKey);
+			this.c1s = new _BlackKey2.default(this.height, 150, _Notes.notes.c1sKey);
+			this.d1s = new _BlackKey2.default(this.height, 350, _Notes.notes.d1sKey);
+			this.f1s = new _BlackKey2.default(this.height, 450, _Notes.notes.f1sKey);
+			this.g1s = new _BlackKey2.default(this.height, 550, _Notes.notes.g1sKey);
 		}
-		//This will call the drawboard, ball and players every 30 ms
+		//This will call the drawboard every 30 ms
 
 
 		_createClass(Piano, [{
@@ -572,7 +572,7 @@
 	        case this.keys.key:
 	          console.log("Hello!");
 	          this.keys.note.currentTime = 0;
-	          this.keys.note.loop = false;
+	          //this.keys.note.loop = false;
 	          this.keys.note.play();
 	          this.color = "grey";
 	          this.pressed = true;
@@ -710,69 +710,59 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var a1Key = exports.a1Key = {
-	  key: 65, //A key
-	  note: new Audio('sounds/a1.wav')
-	};
-
-	var a1sKey = exports.a1sKey = {
-	  key: 87, //W key
-	  note: new Audio('sounds/a1s.wav')
-	};
-
-	var b1Key = exports.b1Key = {
-	  key: 83, //S key
-	  note: new Audio('sounds/b1.wav')
-	};
-
-	var c1Key = exports.c1Key = {
-	  key: 68, //D key
-	  note: new Audio('sounds/c1.wav')
-	};
-
-	var c1sKey = exports.c1sKey = {
-	  key: 69, //E key
-	  note: new Audio('sounds/c1s.wav')
-	};
-
-	var c2Key = exports.c2Key = {
-	  key: 70, //F key
-	  note: new Audio('sounds/c2.wav')
-	};
-
-	var d1Key = exports.d1Key = {
-	  key: 71, //G key
-	  note: new Audio('sounds/d1.wav')
-	};
-
-	var d1sKey = exports.d1sKey = {
-	  key: 89, //Y key
-	  note: new Audio('sounds/d1s.wav')
-	};
-
-	var e1Key = exports.e1Key = {
-	  key: 72, //H key
-	  note: new Audio('sounds/e1.wav')
-	};
-
-	var f1Key = exports.f1Key = {
-	  key: 74, //J key
-	  note: new Audio('sounds/f1.wav')
-	};
-
-	var f1sKey = exports.f1sKey = {
-	  key: 85, //U key
-	  note: new Audio('sounds/f1s.wav')
-	};
-
-	var g1Key = exports.g1Key = {
-	  key: 75, //K key
-	  note: new Audio('sounds/g1.wav')
-	};
-
-	var g1sKey = exports.g1sKey = {
-	  key: 73, //I key
-	  note: new Audio('sounds/g1s.wav')
+	var notes = exports.notes = {
+	  a1Key: {
+	    key: 65, //A key
+	    note: new Audio('sounds/a1.wav')
+	  },
+	  a1sKey: {
+	    key: 87, //W key
+	    note: new Audio('sounds/a1s.wav')
+	  },
+	  b1Key: {
+	    key: 83, //S key
+	    note: new Audio('sounds/b1.wav')
+	  },
+	  c1Key: {
+	    key: 68, //D key
+	    note: new Audio('sounds/c1.wav')
+	  },
+	  c1sKey: {
+	    key: 69, //E key
+	    note: new Audio('sounds/c1s.wav')
+	  },
+	  c2Key: {
+	    key: 70, //F key
+	    note: new Audio('sounds/c2.wav')
+	  },
+	  d1Key: {
+	    key: 71, //G key
+	    note: new Audio('sounds/d1.wav')
+	  },
+	  d1sKey: {
+	    key: 89, //Y key
+	    note: new Audio('sounds/d1s.wav')
+	  },
+	  e1Key: {
+	    key: 72, //H key
+	    note: new Audio('sounds/e1.wav')
+	  },
+	  f1Key: {
+	    key: 74, //J key
+	    note: new Audio('sounds/f1.wav')
+	  },
+	  f1sKey: {
+	    key: 85, //U key
+	    note: new Audio('sounds/f1s.wav')
+	  },
+	  g1Key: {
+	    key: 75, //K key
+	    note: new Audio('sounds/g1.wav')
+	  },
+	  g1sKey: {
+	    key: 73, //I key
+	    note: new Audio('sounds/g1s.wav')
+	  }
 	};
 
 /***/ }

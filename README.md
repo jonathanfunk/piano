@@ -2,7 +2,7 @@ Piano
 ======
 
 ## Project
-The objective for this project is to create a functional piano HTML5 Canvas.
+The objective for this project is to create a functional piano.
 
 ## Technology
 * Atom Text Editor
@@ -13,4 +13,4 @@ The objective for this project is to create a functional piano HTML5 Canvas.
 * Git/Github
 
 ## Learning Experience
-This project was for fun. Working with HTML5 Canvas, I used Javascript and piano audio to make a piano that users can play with their mouse or keyboard.
+This project is currently in progress. Working with HTML5 Canvas, I used Javascript and piano audio to make a piano that users can play with their keyboard. After working with Javascript extensively during my App Development program, I've refactored my files so that they use fewer lines of code.

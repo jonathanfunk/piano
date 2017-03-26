@@ -19,9 +19,8 @@ export default class WhiteKey {
   keyUp(event){
     switch (event.keyCode) {
       case this.keys.key:
-      console.log("Hello!");
-      this.keys.note.currentTime = 0;
-      this.keys.note.loop = false;
+      //this.keys.note.currentTime = 0;
+      //this.keys.note.loop = false;
       this.keys.note.play();
       this.color = "grey";
       this.pressed = true;
